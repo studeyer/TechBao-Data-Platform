@@ -80,17 +80,19 @@ flowchart TB
 | Apache APISIX | API 网关、路由、鉴权、限流 | 规划中 |
 | Keycloak | 统一认证、SSO、身份与角色管理 | 规划中 |
 | MinIO | 文件存储、对象存储、S3 兼容接口 | 规划中 |
+| DataSphereStudio | 统一数据开发门户、AppConn 集成能力候选 | 评估中 |
 
 ## 实施路线
 
 1. 项目初始化：建立文档、部署目录和 ADR，明确集成优先原则。
-2. 本地验证环境：提供 Docker Compose 草案，验证核心组件单机启动。
-3. 认证集成：验证 Keycloak 与 Directus、Superset、DataHub、APISIX 的 SSO 方案。
-4. 数据链路验证：验证 PostgreSQL 到 Doris 的同步、调度和质量检查链路。
+2. 主链路验证：优先验证 PostgreSQL、DolphinScheduler、Doris、Superset 的数据开发到分析链路。
+3. 本地验证环境：提供 Docker Compose 草案，验证核心组件单机启动。
+4. 认证集成：验证 Keycloak 与 Directus、Superset、DataHub、APISIX 的 SSO 方案。
 5. 元数据治理：验证 DataHub 对 PostgreSQL、Doris、Superset 的元数据采集。
-6. API 出口治理：通过 APISIX 统一开放 Directus 和后续平台 API。
-7. Kubernetes 部署：沉淀 Helm、Kustomize 或 GitOps 方向的部署规范。
-8. 运维与安全：补齐日志、监控、备份、权限、安全基线和升级流程。
+6. DSS 评估：验证 DataSphereStudio 作为统一数据开发门户和 AppConn 集成层的可行性。
+7. API 出口治理：通过 APISIX 统一开放 Directus 和后续平台 API。
+8. Kubernetes 部署：沉淀 Helm、Kustomize 或 GitOps 方向的部署规范。
+9. 运维与安全：补齐日志、监控、备份、权限、安全基线和升级流程。
 
 ## 当前项目状态
 
@@ -109,6 +111,7 @@ flowchart TB
 - [技术栈](docs/02-technology/tech-stack.md)
 - [组件选型](docs/02-technology/component-selection.md)
 - [集成架构](docs/02-technology/integration-architecture.md)
+- [DataSphereStudio 评估](docs/02-technology/dss-evaluation.md)
 - [部署说明](docs/04-deployment/local-deployment.md)
 - [架构决策记录](docs/adr/0001-open-source-integration-first.md)
 

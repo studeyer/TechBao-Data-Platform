@@ -55,3 +55,11 @@
 - 定位：文件和对象存储。
 - 选择原因：兼容 S3 API，适合本地和私有化环境中的对象存储需求。
 - 集成重点：存放导入导出文件、任务中间文件和后续数据湖相关对象。
+
+## DataSphereStudio
+
+- 定位：统一数据开发门户和数据应用组件集成候选。
+- 当前状态：评估中，不替换已确定的核心组件。
+- 选择原因：DSS 提供面向数据应用开发的统一 UI、工作空间、工作流和 AppConn 集成机制，适合评估其作为数据开发门户层的价值。
+- 集成重点：验证 DSS 是否能通过 AppConn 或已有插件与 DolphinScheduler、Superset、APISIX、Keycloak 等组件组合，而不是要求平台整体迁移到 DSS 生态。
+- 风险约束：DSS 与 DolphinScheduler、Superset、DataHub、APISIX 等能力存在部分重叠，必须通过 PoC 评估集成成本、运维复杂度和产品边界后再决定是否引入。
